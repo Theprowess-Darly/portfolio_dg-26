@@ -7,17 +7,17 @@ function Button({
     const baseStyles = 'inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2'
     const variants = {
         primary:
-            'bg-sky-400 text-slate-950 hover:bg-sky-300 focus-visisible:outline-sky-400',
+            'bg-primary text-background hover:bg-primary-strong focus-visisible:outline-primary',
         
         seconday:
-            'border border-slate-700 bg-slate-900 text-wite hover:border-slate-600 hover:bg-slate-800 focus-visible:outline-sky-400',
+            'border border-border bg-surface text-content hover:border-content-muted hover:bg-elevated focus-visible:outline-primary',
 
         text:
-            'px-0 py-1 text-slate-300 hover:text-white focus-visible:outline-sky-400',
+            'px-0 py-1 text-content-secondary hover:text-content focus-visible:outline-primary',
     }
 
     return (
-        <button className={`${baseStyles} ${variant[variant]} ${className}`}>
+        <button className={`${baseStyles} ${variant[variant]} ${className}`} {...props}>
             {children}
         </button>
     )
