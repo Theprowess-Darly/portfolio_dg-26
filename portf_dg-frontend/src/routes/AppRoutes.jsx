@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import PublicLayout from '../layouts/PublicLayout'
+import Home from '../pages/Home/Home'
 
-function Home() {
-    return <h1>Home</h1>
-}
+
+
+
 function About() {
     return <h1>About</h1>
 }
@@ -26,14 +28,15 @@ function AppRoutes() {
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />}/>
-                <Route path="/about" element={<About />}/>
-                <Route path="/projects" element={<Projects />}/>
-                <Route path="/projects/:slug" element={<ProjectDetails />}/>
-                <Route path="/blog" element={<Blog />}/>
-                <Route path="/blog/:slug" element={<BlogDetails />}/>
-                <Route path="/contact" element={<Contact />}/>
-
+                <Route element={<PublicLayout />}>
+                    <Route path="/" element={<Home />}/>
+                    <Route path="/about" element={<About />}/>
+                    <Route path="/projects" element={<Projects />}/>
+                    <Route path="/projects/:slug" element={<ProjectDetails />}/>
+                    <Route path="/blog" element={<Blog />}/>
+                    <Route path="/blog/:slug" element={<BlogDetails />}/>
+                    <Route path="/contact" element={<Contact />}/>
+                </Route>
             </Routes>
         </BrowserRouter>
     )

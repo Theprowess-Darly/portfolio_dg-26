@@ -1,11 +1,46 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
 @import "tailwindcss";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+
+    --color-background: #080b12;
+    --color-surface: #0f131c;
+    --color-surface-elevated: #151a24;
+
+    --color-primary: #38bdf8;
+    --color-primary-strong: #0ea5e9;
+
+    --color-content: #f8fafc;
+    --color-content-secondary: #cbd5e1;
+    --color-content-muted: #94a3b8;
+
+    --color-border: #1e293b;
+    --color-border-subtle: #172033;
+}
+
 :root {
-    font-family: Inter, system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     font-weight: 400;
     line-height: 1.5;
+    color: #f8fafc;
+    background: #080b12;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
 
 * {
     box-sizing: border-box;
@@ -18,4 +53,11 @@ html {
 body {
     margin: 0;
     min-width: 320px;
+    min-height: 100vh;
+    background: #080b12;
+    color: #f8fafc;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
 }
